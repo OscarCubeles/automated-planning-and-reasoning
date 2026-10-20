@@ -1,0 +1,430 @@
+stderr: 
+Using TensorFlow backend.
+Warning: name clash between type and predicate u'spot'.
+Interpreting as predicate in conditions.
+
+stdout: 
+Parsing pddl.....
+Parsing pddl..: [0.000s CPU, 0.004s wall-clock]
+Normalizing task.....
+Normalizing task..: [0.000s CPU, 0.000s wall-clock]
+Creating abstract structure graph.....
+Creating abstract structure graph..: [0.000s CPU, 0.001s wall-clock]
+Computing image from given graph...
+Using graph input file /tmp/tmph2yj5jb5/abstract-structure-graph.txt
+Using image output directory /tmp/tmph2yj5jb5
+Writing abstract structure graph grayscale 8bit image.....
+Grayscale color: 255
+Creating matrix for a graph with 155 nodes..
+Matrix size when created: 194688
+Matrix created, filling with values for edges..
+Performing bolding.
+Matrix size when 1s added: 194688
+Number of graph nodes: 156
+Shrink ratio: 3
+Shrinking matrix to size 52x52..
+Shrinked matrix size when created: 21632
+Writing grayscale image of size 128x128 ..
+Writing abstract structure graph grayscale 8bit image..: [0.240s CPU, 0.017s wall-clock]
+Done computing image! [0.270s CPU, 0.019s wall-clock]
+
+==== Computing an abstract structure graph from the lifted task description... ====
+
+
+==== Done computing an abstract structure graph. ====
+
+
+==== Selecting planner from learned model... ====
+
+Using json model file /workspace/delfi/dl_model/models/lifted/model.json
+Using h5 model file /workspace/delfi/dl_model/models/lifted/model.h5
+Loaded model from disk
+Chose seq-opt-symba-1
+
+==== Done selecting planner from learned model. ====
+
+
+==== Running the selected planner... ====
+
+Running planner, call string: ['/usr/bin/python', '/workspace/delfi/symba.py', 'seq-opt-symba-1', 'domain', 'problem', 'plan']
+1. Running translator
+Second argument is a file name: use two translator arguments.
+Parsing...
+Parsing: [0.000s CPU, 0.002s wall-clock]
+Normalizing task... [0.000s CPU, 0.000s wall-clock]
+Instantiating...
+Generating Datalog program... [0.000s CPU, 0.001s wall-clock]
+Normalizing Datalog program...
+Normalizing Datalog program: [0.000s CPU, 0.003s wall-clock]
+Preparing model... [0.000s CPU, 0.001s wall-clock]
+Generated 19 rules.
+Computing model... [0.010s CPU, 0.004s wall-clock]
+338 relevant atoms
+172 auxiliary atoms
+510 final queue length
+614 total queue pushes
+Completing instantiation... [0.000s CPU, 0.003s wall-clock]
+Instantiating: [0.010s CPU, 0.012s wall-clock]
+Computing fact groups...
+Finding invariants...
+12 initial candidates
+Finding invariants: [0.000s CPU, 0.002s wall-clock]
+Checking invariant weight... [0.000s CPU, 0.000s wall-clock]
+Instantiating groups... [0.000s CPU, 0.001s wall-clock]
+Collecting mutex groups... [0.000s CPU, 0.000s wall-clock]
+Choosing groups...
+4 uncovered facts
+Choosing groups: [0.000s CPU, 0.000s wall-clock]
+Building translation key... [0.000s CPU, 0.000s wall-clock]
+Computing fact groups: [0.000s CPU, 0.004s wall-clock]
+Building STRIPS to SAS dictionary... [0.000s CPU, 0.000s wall-clock]
+Building dictionary for full mutex groups... [0.000s CPU, 0.000s wall-clock]
+Building mutex information...
+Building mutex information: [0.000s CPU, 0.000s wall-clock]
+Translating task...
+Processing axioms...
+Simplifying axioms... [0.000s CPU, 0.000s wall-clock]
+Processing axioms: [0.000s CPU, 0.000s wall-clock]
+Translating task: [0.010s CPU, 0.003s wall-clock]
+0 implied effects removed
+16 effect conditions simplified
+0 implied preconditions added
+Detecting unreachable propositions...
+13 operators removed
+6 propositions removed
+Detecting unreachable propositions: [0.000s CPU, 0.001s wall-clock]
+Translator variables: 10
+Translator derived variables: 0
+Translator facts: 46
+Translator mutex groups: 10
+Translator total mutex groups size: 46
+Translator operators: 76
+Translator task size: 410
+Translator peak memory: 27648 KB
+Writing output... [0.000s CPU, 0.001s wall-clock]
+Done! [0.020s CPU, 0.023s wall-clock]
+
+2. Running preprocessor
+Building causal graph...
+The causal graph is not acyclic.
+10 variables of 10 necessary
+8 of 10 mutex groups necessary.
+76 of 76 operators necessary.
+0 of 0 axiom rules necessary.
+Initializing mutex computation...
+Mutex computation initialized with 46 fluents.
+iteration for mutex detection and operator pruning
+Initialize m_index fw
+Initialized mvalues forward: reached=100, notReached=1528, spurious=488
+Initialize m_ops fw
+Computing mutexes...
+Mutex computation finished with reached=1584, notReached=44, spurious=488
+0 operators are spurious because were not triggered
+H^2 mutexes added fw: 44, unreachable: 0
+0 of 76 operators detected as spurious
+iteration for mutex detection and operator pruning
+Initialize m_index bw
+Init values regression
+Initialized mvalues backward: reached=728, notReached=856, spurious=532
+Initialize m_ops bw
+Computing mutexes...
+Mutex computation finished with reached=1584, notReached=0, spurious=532
+0 operators are spurious because were not triggered
+H^2 mutexes added bw: 0, unreachable: 0
+0 of 76 operators detected as spurious
+Total mutex and disambiguation time: 0.001129
+30 of 30 mutex groups necessary.
+76 of 76 operators necessary.
+0 of 0 axiom rules necessary.
+Change id of operators: 76
+Change id of axioms: 0
+Change id of mutexes
+Change id of goals
+Change id of initial state
+Remove unreachable facts from variables: 10
+30 of 30 mutex groups necessary.
+76 of 76 operators necessary.
+0 of 0 axiom rules necessary.
+Updating causal graph and pruning unnecessary facts
+10 variables of 10 of 10 necessary
+The causal graph is not acyclic.
+30 of 30 mutex groups necessary.
+76 of 76 operators necessary.
+0 of 0 axiom rules necessary.
+Ordering: 10
+previous variable order: var1 - var6 - var7 - var8 - var9 - var0 - var2 - var3 - var4 - var5 - : 785
+New value: 497
+new variable order: var2 - var6 - var5 - var8 - var0 - var1 - var9 - var3 - var7 - var4 - : 497
+Building domain transition graphs...
+solveable in poly time 0
+Building successor generator...
+Preprocessor facts: 46
+Preprocessor derived variables: 0
+Preprocessor task size: 428
+Writing output...
+Number of vars: 10
+weighted 10
+done
+
+
+3. Running search
+Dispatcher selected state size 1.
+This is a unit task.
+Simplifying transitions... done!
+  Max num abstractions: 100
+   Abs TRs Strategy: ind_tr_shrink
+   PH time: 500, memory: 3e+09
+   Relax time: 10000, nodes: 100000000
+   Ratio relax time: 0.75, nodes: 0.75
+   Perimeter Abstractions: yes
+   Relax dir: bd
+   ShouldAbstract ratio: 0
+CUDD Init: nodes=16000000 cache=16000000 max_memory=0
+TR(time=60000, nodes=100000)
+Mutex(time=60000, nodes=100000, type=edeletion)
+Disj(nodes=2147483647)
+Estimation: min_time(1000) time_penalty +(1000)*(2) nodes_penalty +(1000)*(2)
+Pop(time=2000, nodes=1000000)
+MaxStep(time=30000, nodes=10000000)
+Ratio useful: 0
+   Min alloted time: 60000 nodes: 10000000
+   Max alloted time: 60000 nodes: 15000000
+   Mult alloted time: 2 nodes: 2
+   Ratio after relax: 0.8
+  Max num abstractions: 100
+   Abs TRs Strategy: ind_tr_shrink
+   PH time: 500, memory: 3e+09
+   Relax time: 10000, nodes: 100000000
+   Ratio relax time: 0.75, nodes: 0.75
+   Perimeter Abstractions: yes
+   Relax dir: bd
+   ShouldAbstract ratio: 0
+CUDD Init: nodes=16000000 cache=16000000 max_memory=0
+TR(time=60000, nodes=100000)
+Mutex(time=60000, nodes=100000, type=edeletion)
+Disj(nodes=2147483647)
+Estimation: min_time(1000) time_penalty +(1000)*(2) nodes_penalty +(1000)*(2)
+Pop(time=2000, nodes=1000000)
+MaxStep(time=30000, nodes=10000000)
+Ratio useful: 0
+   Min alloted time: 60000 nodes: 10000000
+   Max alloted time: 60000 nodes: 15000000
+   Mult alloted time: 2 nodes: 2
+   Ratio after relax: 0.8
+  Max num abstractions: 100
+   Abs TRs Strategy: ind_tr_shrink
+   PH time: 500, memory: 3e+09
+   Relax time: 10000, nodes: 100000000
+   Ratio relax time: 0.75, nodes: 0.75
+   Perimeter Abstractions: yes
+   Relax dir: bd
+   ShouldAbstract ratio: 0
+CUDD Init: nodes=16000000 cache=16000000 max_memory=0
+TR(time=60000, nodes=100000)
+Mutex(time=60000, nodes=100000, type=edeletion)
+Disj(nodes=2147483647)
+Estimation: min_time(1000) time_penalty +(1000)*(2) nodes_penalty +(1000)*(2)
+Pop(time=2000, nodes=1000000)
+MaxStep(time=30000, nodes=10000000)
+Ratio useful: 0
+   Min alloted time: 60000 nodes: 10000000
+   Max alloted time: 60000 nodes: 15000000
+   Mult alloted time: 2 nodes: 2
+   Ratio after relax: 0.8
+Initializing Symbolic Variables
+Num variables: 10 => 20
+Initialize Symbolic Manager(40, 400000, 16000000, 0)
+Generating binary variables
+Generating predicate BDDs
+Symbolic Variables... Done.
+CUDD Init: nodes=16000000 cache=16000000 max_memory=0
+TR(time=60000, nodes=100000)
+Mutex(time=60000, nodes=100000, type=edeletion)
+Disj(nodes=2147483647)
+Estimation: min_time(1000) time_penalty +(1000)*(2) nodes_penalty +(1000)*(2)
+Pop(time=2000, nodes=1000000)
+MaxStep(time=45000, nodes=10000000)
+Ratio useful: 0
+   Min alloted time: 60000 nodes: 10000000
+   Max alloted time: 60000 nodes: 15000000
+   Mult alloted time: 2 nodes: 2
+   Ratio after relax: 0.8
+SymBA* 
+   Search dir: bd
+   Time force original: 1500 seconds
+Conducting symbolic search Operator cost: 0 (real) bound = 2147483647
+Initialize abstraction hierarchy
+Mutex BDD BW Size(100000): 19
+Mutex BDD FW Size(100000):
+TRs cost=1 (1):  497
+BOUND: 1 < 2147483647, total time: 0.12s
+>> Step: original fw f=1, g=0
+BOUND: 2 < 2147483647, total time: 0.12s
+>> Step: original bw f=2, g=0
+BOUND: 3 < 2147483647, total time: 0.12s
+>> Step: original fw f=3, g=1
+BOUND: 4 < 2147483647, total time: 0.12s
+>> Step: original fw f=4, g=2
+BOUND: 5 < 2147483647, total time: 0.12s
+>> Step: original fw f=5, g=3
+BOUND: 6 < 2147483647, total time: 0.12s
+>> Step: original fw f=6, g=4
+BOUND: 7 < 2147483647, total time: 0.12s
+>> Step: original fw f=7, g=5
+BOUND: 8 < 2147483647, total time: 0.12s
+>> Step: original fw f=8, g=6
+BOUND: 9 < 2147483647, total time: 0.12s
+>> Step: original fw f=9, g=7
+BOUND: 10 < 2147483647, total time: 0.12s
+>> Step: original fw f=10, g=8
+BOUND: 11 < 2147483647, total time: 0.12s
+>> Step: original fw f=11, g=9
+BOUND: 12 < 2147483647, total time: 0.12s
+>> Step: original fw f=12, g=10
+BOUND: 13 < 2147483647, total time: 0.12s
+>> Step: original fw f=13, g=11
+BOUND: 14 < 2147483647, total time: 0.12s
+>> Step: original fw f=14, g=12
+BOUND: 15 < 2147483647, total time: 0.12s
+>> Step: original fw f=15, g=13
+BOUND: 16 < 2147483647, total time: 0.12s
+>> Step: original fw f=16, g=14
+BOUND: 17 < 2147483647, total time: 0.12s
+>> Step: original fw f=17, g=15
+BOUND: 18 < 2147483647, total time: 0.12s
+>> Step: original fw f=18, g=16
+BOUND: 19 < 2147483647, total time: 0.12s
+>> Step: original fw f=19, g=17
+BOUND: 20 < 2147483647, total time: 0.12s
+>> Step: original fw f=20, g=18
+BOUND: 21 < 2147483647, total time: 0.12s
+>> Step: original fw f=21, g=19
+BOUND: 22 < 2147483647, total time: 0.12s
+>> Step: original fw f=22, g=20
+BOUND: 23 < 2147483647, total time: 0.12s
+>> Step: original fw f=23, g=21
+BOUND: 24 < 2147483647, total time: 0.12s
+>> Step: original fw f=24, g=22
+BOUND: 25 < 2147483647, total time: 0.12s
+>> Step: original fw f=25, g=23
+BOUND: 26 < 2147483647, total time: 0.12s
+>> Step: original fw f=26, g=24
+BOUND: 27 < 2147483647, total time: 0.12s
+>> Step: original fw f=27, g=25
+BOUND: 28 < 2147483647, total time: 0.12s
+>> Step: original fw f=28, g=26
+BOUND: 29 < 2147483647, total time: 0.12s
+>> Step: original fw f=29, g=27
+BOUND: 30 < 2147483647, total time: 0.12s
+>> Step: original fw f=30, g=28
+BOUND: 31 < 2147483647, total time: 0.12s
+>> Step: original fw f=31, g=29
+BOUND: 32 < 2147483647, total time: 0.12s
+>> Step: original fw f=32, g=30
+BOUND: 33 < 2147483647, total time: 0.12s
+>> Step: original fw f=33, g=31
+BOUND: 34 < 2147483647, total time: 0.12s
+>> Step: original fw f=34, g=32
+BOUND: 35 < 2147483647, total time: 0.14s
+>> Step: original fw f=35, g=33
+BOUND: 36 < 2147483647, total time: 0.14s
+>> Step: original fw f=36, g=34
+BOUND: 37 < 2147483647, total time: 0.14s
+>> Step: original fw f=37, g=35
+BOUND: 38 < 2147483647, total time: 0.14s
+>> Step: original fw f=38, g=36
+BOUND: 39 < 2147483647, total time: 0.14s
+>> Step: original fw f=39, g=37
+BOUND: 40 < 2147483647, total time: 0.14s
+>> Step: original fw f=40, g=38
+BOUND: 41 < 2147483647, total time: 0.14s
+>> Step: original fw f=41, g=39
+BOUND: 42 < 2147483647, total time: 0.14s
+>> Step: original fw f=42, g=40
+BOUND: 43 < 2147483647, total time: 0.14s
+>> Step: original fw f=43, g=41
+BOUND: 44 < 2147483647, total time: 0.14s
+>> Step: original fw f=44, g=42
+BOUND: 45 < 2147483647, total time: 0.14s
+>> Step: original fw f=45, g=43
+BOUND: 46 < 2147483647, total time: 0.14s
+>> Step: original fw f=46, g=44
+BOUND: 47 < 2147483647, total time: 0.14s
+>> Step: original fw f=47, g=45
+BOUND: 48 < 2147483647, total time: 0.14s
+>> Step: original fw f=48, g=46
+BOUND: 49 < 2147483647, total time: 0.14s
+>> Step: original fw f=49, g=47
+BOUND: 50 < 2147483647, total time: 0.14s
+>> Step: original fw f=50, g=48
+Solution found with cost 50 total time: 0.14s
+BOUND: 50 < 50, total time: 0.16s
+Actual search time: 0.04s [t=0.16s]
+move loc13 loc12 (1)
+move loc12 loc7 (1)
+move loc7 loc6 (1)
+pickup person2 loc6 (1)
+move loc6 loc7 (1)
+move loc7 loc12 (1)
+move loc12 loc17 (1)
+move loc17 loc16 (1)
+move loc16 loc21 (1)
+dropoff person2 loc21 s3 (1)
+move loc21 loc22 (1)
+move loc22 loc23 (1)
+move loc23 loc24 (1)
+move loc24 loc25 (1)
+pickup person4 loc25 (1)
+move loc25 loc24 (1)
+move loc24 loc23 (1)
+move loc23 loc22 (1)
+move loc22 loc21 (1)
+dropoff person4 loc21 s2 (1)
+move loc21 loc22 (1)
+move loc22 loc23 (1)
+move loc23 loc24 (1)
+move loc24 loc25 (1)
+move loc25 loc20 (1)
+move loc20 loc15 (1)
+move loc15 loc10 (1)
+pickup person3 loc10 (1)
+move loc10 loc15 (1)
+move loc15 loc20 (1)
+move loc20 loc25 (1)
+move loc25 loc24 (1)
+move loc24 loc23 (1)
+move loc23 loc22 (1)
+move loc22 loc21 (1)
+dropoff person3 loc21 s1 (1)
+move loc21 loc16 (1)
+move loc16 loc17 (1)
+move loc17 loc12 (1)
+move loc12 loc7 (1)
+move loc7 loc2 (1)
+move loc2 loc3 (1)
+pickup person1 loc3 (1)
+move loc3 loc2 (1)
+move loc2 loc7 (1)
+move loc7 loc12 (1)
+move loc12 loc17 (1)
+move loc17 loc16 (1)
+move loc16 loc21 (1)
+dropoff person1 loc21 s4 (1)
+Plan length: 50 step(s).
+Plan cost: 50
+Expanded 0 state(s).
+Reopened 0 state(s).
+Evaluated 0 state(s).
+Evaluations: 0
+Generated 0 state(s).
+Dead ends: 0 state(s).
+Search space hash size: 0
+Search space hash bucket count: 193
+Search time: 0.06s
+Total time: 0.16s
+Solution found.
+Peak memory: 223276 KB
+
+Overall time: [0.470s CPU, 0.489s wall-clock]
+
+==== Done running the selected planner. ====
